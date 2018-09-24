@@ -11,8 +11,17 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    $links = \App\Link::all();
+    // // with()
+    // return view('welcome')->with('links', $links);
+    // // dynamic method to name the variable
+    // return view('welcome')->withLinks($links);
+    return view('welcome',['links' => $links]);
 });
 
 Auth::routes();
