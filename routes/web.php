@@ -63,4 +63,4 @@ Route::post('/submit', function (Request $request) {
 
 Route::get('/events/{id}', 'EventsController@show');
 
-Route::get('events/category/{category}/{subcategory}', 'EventsController@category');
+Route::get('events/category/{category}/{subcategory?}', 'EventsController@category');
