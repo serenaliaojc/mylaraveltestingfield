@@ -55,8 +55,12 @@ Route::post('/submit', function (Request $request) {
     // $link->url = $data['url'];
     // $link->description = $data['description'];
     // $link->save();
-    
+
     $link = tap(new App\Link($data))->save();
 
     return redirect('/');
 });
+
+Route::get('/events/{id}', 'EventsController@show');
+
+Route::get('events/category/{category}/{subcategory}', 'EventsController@category');
