@@ -12,19 +12,21 @@
  */
 
 use Illuminate\Http\Request;
+use Symfony\Component\Routing\Route;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    $links = \App\Link::all();
-    // // with()
-    // return view('welcome')->with('links', $links);
-    // // dynamic method to name the variable
-    // return view('welcome')->withLinks($links);
-    return view('welcome', ['links' => $links]);
-});
+// Route::get('/', function () {
+//     $links = \App\Link::all();
+//     // // with()
+//     // return view('welcome')->with('links', $links);
+//     // // dynamic method to name the variable
+//     // return view('welcome')->withLinks($links);
+//     return view('welcome', ['links' => $links]);
+// });
+Route::get('/', 'WelcomeController@index');
 
 Auth::routes();
 
