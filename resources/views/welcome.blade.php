@@ -92,6 +92,9 @@
                         <a href="{{ $link->url }}">{{ $link->title }}</a>
                     @endforeach
                 </div>
+                <div>
+                    <a href="{{ route('events.show', ['id' => 42]) }}">One Event</a>
+                </div>
 
             </div>
         </div>
