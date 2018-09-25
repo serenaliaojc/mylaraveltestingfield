@@ -12,7 +12,8 @@
  */
 
 use Illuminate\Http\Request;
-use Symfony\Component\Routing\Route;
+// use Symfony\Component\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     return view('welcome');
