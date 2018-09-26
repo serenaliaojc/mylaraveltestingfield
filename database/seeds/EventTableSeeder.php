@@ -27,7 +27,7 @@ class EventTableSeeder extends Seeder
 
         $faker = Faker\Factory::create();
 
-        foreach(range(1,10) as $index) {
+        foreach(range(1,50) as $index) {
             Event::create([
                 'name' => $faker->sentence(2),
                 'enabled' => true,

@@ -19,6 +19,8 @@
     @endforelse
 </ul>
 
+{!! $events->links() !!}
+
 {{-- <h2>if</h2>
 <ul>
     @foreach ($events as $event)
