@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Loop</h1>
-
+<img src="{{ asset('img/img.jpg') }}" alt="img" width="200">
 <h2>simple loop</h2>
 <ul>
     @foreach ($events as $event)
