@@ -2,41 +2,85 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use App\Event;
+
 class EventsController extends Controller
 {
-    public function index() {
-        $events = [
-            'Laravel Hacking and Coffee', 
-            'IoT with Raspberry Pi',
-            'Free Vue.js Lessons'
-        ]; 
-        return view('events.index')->with('events', $events); 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $events = Event::all();
+        return view('events.index')->with('events',$events); 
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
-        // dd($id);
-
-        // concat:
-        // $name = 'Hilton Head Beach House';
-        //  $date = date('Y-m-d');
-        //  return view('welcome', compact('name', 'date'));
-
-        // array
-        $data = [
-            'name' => 'Name from Array',
-            'date' => date('Y-m-d'),
-            'id' => $id
-        ];
-        return view('events.show')->with($data);
-
-        // return view('events.show')
-        //     ->with('id', $id)
-        //     ->with('name', 'The name comes from the controller');
+        //
     }
 
-    public function category($category, $subcategory = 'all')
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
-        dd("Category: {$category} Subcategory: {$subcategory}");
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }
