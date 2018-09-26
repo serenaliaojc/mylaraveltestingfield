@@ -1,3 +1,6 @@
+@extends('layouts.test')
+
+@section('content')
 <h1>Loop</h1>
 
 <h2>simple loop</h2>
@@ -31,3 +34,16 @@
         </li>
     @endforeach
 </ul>
+
+<h2>partial view</h2>
+<table>
+    @foreach ($events as $event)
+        @include('partials._row', ['event' => $event])
+    @endforeach
+</table>
+@endsection
+
+@section('advertisement')
+    <p>HackerPair members always get 10% off at Tron Cafe! </p>
+@endsection
+
