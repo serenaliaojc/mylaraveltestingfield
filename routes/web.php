@@ -61,6 +61,8 @@ Route::post('/submit', function (Request $request) {
     return redirect('/');
 });
 
-Route::get('/events/{id}', 'EventsController@show')->name('events.show');
+Route::get('events/{id}', 'EventsController@show')->name('events.show');
 
 Route::get('events/category/{category}/{subcategory?}', 'EventsController@category');
+
+Route::get('events', 'EventsController@index');

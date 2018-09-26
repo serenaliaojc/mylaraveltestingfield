@@ -4,6 +4,15 @@ namespace App\Http\Controllers;
 
 class EventsController extends Controller
 {
+    public function index() {
+        $events = [
+            'Laravel Hacking and Coffee', 
+            'IoT with Raspberry Pi',
+            'Free Vue.js Lessons'
+        ]; 
+        return view('events.index')->with('events', $events); 
+    }
+
     public function show($id)
     {
         // dd($id);
