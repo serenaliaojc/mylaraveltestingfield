@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+// use Symfony\Component\EventDispatcher\Event;
 
 class EventsController extends Controller
 {
@@ -14,7 +16,15 @@ class EventsController extends Controller
      */
     public function index()
     {
-        //
+        try{
+            $events = Event::where('enabled', '=', true)->orderBy('name', 'ASC')->paginate(10);
+
+            return view('events.index')->with('events',$events);
+        }
+        catch(ModelNotFoundException $e){
+
+        }
+        
     }
 
     /**
@@ -44,8 +54,9 @@ class EventsController extends Controller
      * @param  \App\Event  $event
      * @return \Illuminate\Http\Response
      */
-    public function show(Event $event)
+    public function show($id)
     {
+        $event = Event::findOrFail($id);
         return view('events.show')->with('event', $event);
     }
 
