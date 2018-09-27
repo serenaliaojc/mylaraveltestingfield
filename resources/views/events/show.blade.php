@@ -8,6 +8,9 @@
             <p>City: {{ $event->city }}</p>
             <p>Venue: {{ $event->venue }}</p>
             <p>Description: {{ $event->description }}</p>
+            @if (!$event->occurringToday())
+                <p>Not created today.</p>
+            @endif
         </div>
 
     @else
