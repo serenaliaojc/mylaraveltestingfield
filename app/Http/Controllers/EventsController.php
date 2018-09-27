@@ -17,7 +17,7 @@ class EventsController extends Controller
     public function index()
     {
 
-        $events = Event::withoutGlobalScopes()->where('enabled', '=', true)->orderBy('name', 'ASC')->paginate(10);
+        $events = Event::withoutGlobalScopes()->enabled()->orderBy('name', 'ASC')->paginate(10);
 
         return view('events.index')->with('events', $events);
 

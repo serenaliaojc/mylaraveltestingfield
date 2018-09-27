@@ -37,4 +37,8 @@ class Event extends Model
         return $this->created_at->isToday();
     }
 
+    public function scopeEnabled($query) {
+        return $query->where('enabled', 0); 
+    }
+
 }
